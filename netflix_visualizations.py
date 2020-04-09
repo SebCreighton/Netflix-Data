@@ -34,7 +34,7 @@
 # - `import pandas as pd`
 # - `import seaborn as sns`
 
-# In[18]:
+# In[1]:
 
 
 from matplotlib import pyplot as plt
@@ -52,7 +52,7 @@ import seaborn as sns
 # 
 # Note: In the Yahoo Data, `Adj Close` represents the adjusted close price adjusted for both dividends and splits. This means this is the true closing stock price for a given business day.
 
-# In[19]:
+# In[2]:
 
 
 netflix_stocks = pd.read_csv('NFLX.csv')
@@ -64,7 +64,7 @@ print(netflix_stocks)
 # Note: You can learn more about why the Dow Jones Industrial Average is a industry reflection of the larger stock market [here](https://www.investopedia.com/terms/d/djia.asp). 
 # 
 
-# In[20]:
+# In[3]:
 
 
 dowjones_stocks = pd.read_csv('DJI.csv')
@@ -74,7 +74,7 @@ print(dowjones_stocks)
 # Load **NFLX_daily_by_quarter.csv** into a DataFrame called `netflix_stocks_quarterly`. Then, quickly inspect the DataFrame using `print()`.
 # 
 
-# In[21]:
+# In[4]:
 
 
 netflix_stocks_quarterly = pd.read_csv('NFLX_daily_by_quarter.csv')
@@ -92,7 +92,7 @@ print(netflix_stocks_quarterly)
 
 # What year is represented in the data? Look out for the latest and earliest date.
 
-# In[22]:
+# In[5]:
 
 
 "2017"
@@ -102,7 +102,7 @@ print(netflix_stocks_quarterly)
 # + In which ways are the files different? 
 # + What's different about the columns for `netflix_stocks` versus `netflix_stocks_quarterly`?
 
-# In[23]:
+# In[6]:
 
 
 answer1= "NFLX.csv represented by month, DJI.csv represented by month, NFLX_daily_by_quarter.csv represented by day." 
@@ -114,7 +114,7 @@ answer3= "netflix_stocks_quarterly has 'Quarter' column whilst other two don't."
 # 
 # Great! Now that we have spent sometime looking at the data, let's look at the column names of the DataFrame `netflix_stocks` using `.head()`. 
 
-# In[24]:
+# In[7]:
 
 
 print(netflix_stocks.head())
@@ -132,7 +132,7 @@ print(netflix_stocks.head())
 # Hint: Use [`.rename()`](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.rename.html)).
 # 
 
-# In[25]:
+# In[8]:
 
 
 netflix_stocks.rename(columns={'Adj Close': 'Price'}, inplace=True)
@@ -142,7 +142,7 @@ netflix_stocks_quarterly.rename(columns={'Adj Close': 'Price'}, inplace=True)
 
 # Run `netflix_stocks.head()` again to check your column name has changed.
 
-# In[26]:
+# In[9]:
 
 
 print(netflix_stocks.head())
@@ -150,7 +150,7 @@ print(netflix_stocks.head())
 
 # Call `.head()` on the DataFrame `dowjones_stocks` and `netflix_stocks_quarterly`.
 
-# In[27]:
+# In[10]:
 
 
 print(dowjones_stocks.head())
@@ -175,13 +175,13 @@ print(netflix_stocks_quarterly.head())
 # 6. Be sure to show your plot!
 # 
 
-# In[28]:
+# In[11]:
 
 
 ax = sns.violinplot(x="Quarter", y="Price", data = netflix_stocks_quarterly)
 ax.set_title("Distribution of 2017 Netflix Stock Prices by Quarter")
-ax.set_xlabel("Closing Stock Price")
-ax.set_ylabel("Business Quarters in 2017")
+ax.set_xlabel("Business Quarters in 2017")
+ax.set_ylabel("Closing Stock Price")
 plt.savefig('2017_distribution_of_netflix_stock_prices_by_quarter.png')
 plt.show()
 
@@ -208,7 +208,7 @@ plt.show()
 # 6. Assing "`"Earnings Per Share in Cents"` as the title of your plot.
 # 
 
-# In[29]:
+# In[16]:
 
 
 x_positions = [1, 2, 3, 4]
@@ -252,7 +252,7 @@ plt.show()
 # 8. Be sure to show your plot!
 # 
 
-# In[30]:
+# In[13]:
 
 
 # The metrics below are in billions of dollars
@@ -324,7 +324,7 @@ plt.show()
 # - Be sure to `.show()` your plots.
 # 
 
-# In[31]:
+# In[14]:
 
 
 # Left plot Netflix
